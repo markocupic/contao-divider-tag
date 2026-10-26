@@ -1,0 +1,76 @@
+{
+    "name": "markocupic/contao-divider-tag",
+    "description": "Content element and form field for Contao to generate a horizontal rule (hr). Simply choose the element type \"divider\" and save. Fork of stefansl/contao-divider-bundle.",
+    "keywords": [
+        "contao",
+        "bundle",
+        "divider",
+        "horizontal rule",
+        "hr",
+        "content element",
+        "form field"
+    ],
+    "type": "contao-bundle",
+    "license": "LGPL-3.0-or-later",
+    "authors": [
+        {
+            "name": "Marko Cupic",
+            "email": "m.cupic@gmx.ch",
+            "homepage": "https://github.com/markocupic",
+            "role": "Developer"
+        },
+        {
+            "name": "Stefan Schulz-Lauterbach",
+            "homepage": "https://clickpress.de",
+            "role": "Original author"
+        }
+    ],
+    "support": {
+        "issues": "https://github.com/markocupic/contao-divider-tag/issues",
+        "source": "https://github.com/markocupic/contao-divider-tag"
+    },
+    "require": {
+        "php": "^8.1",
+        "contao/core-bundle": "^5.3 || ^6.0",
+        "symfony/config": "^6.4 || ^7.0 || ^8.0",
+        "symfony/dependency-injection": "^6.4 || ^7.0 || ^8.0",
+        "symfony/http-foundation": "^6.4 || ^7.0 || ^8.0",
+        "symfony/http-kernel": "^6.4 || ^7.0 || ^8.0"
+    },
+    "require-dev": {
+        "contao/manager-plugin": "^2.13",
+        "markocupic/easy-coding-standard": "^13.0"
+    },
+    "conflict": {
+        "clickpress/divider": "*",
+        "contao-legacy/divider": "*",
+        "stefansl/contao-divider-bundle": "*",
+        "stefansl/divider": "*"
+    },
+    "autoload": {
+        "psr-4": {
+            "Markocupic\\ContaoDividerTag\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Markocupic\\ContaoDividerTag\\Tests\\": "tests/"
+        }
+    },
+    "config": {
+        "allow-plugins": {
+            "contao-components/installer": false,
+            "contao/manager-plugin": false,
+            "dealerdirect/phpcodesniffer-composer-installer": true,
+            "php-http/discovery": false
+        }
+    },
+    "extra": {
+        "contao-manager-plugin": "Markocupic\\ContaoDividerTag\\ContaoManager\\Plugin"
+    },
+    "scripts": {
+        "cs-fixer": "@php vendor/bin/ecs check --config tools/ecs/config/default.php --fix --ansi",
+        "cs-check": "@php vendor/bin/ecs check --config tools/ecs/config/default.php --ansi",
+        "unit-tests": "@php tools/phpunit/vendor/bin/phpunit -c tools/phpunit/phpunit.xml.dist"
+    }
+}
